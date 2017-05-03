@@ -9,25 +9,8 @@ import { Keg } from './keg.model';
       <h1>Tap Game</h1>
       <hr>
       <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
-      <div>
-        <div *ngIf="selectedKeg">
-          <h2>{{selectedKeg.name}}</h2>
-          <hr>
-          <label>Edit Name:</label>
-          <input [(ngModel)]="selectedKeg.name" /><br>
-          <label>Edit Price:</label>
-          <input type="number" [(ngModel)]="selectedKeg.price" /><br>
-          <label>Edit Alcohol Content:</label>
-          <input type="number" [(ngModel)]="selectedKeg.alcohol_content" /><br>
-          <label>Edit IBU:</label>
-          <input type="number" [(ngModel)]="selectedKeg.IBU" /><br>
-          <label>Edit Amount Remaining:</label>
-          <input type="number" [(ngModel)]="selectedKeg.quantity" /><br>
-          <label>Edit Description:</label>
-          <input [(ngModel)]="selectedKeg.description" /><br>
-          <button (click)="finishedEditing()">Done</button>
-        </div>
-      </div>
+      <hr>
+      <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
     </div>
   `
 })
