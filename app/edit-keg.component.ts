@@ -15,7 +15,7 @@ import { Keg } from './keg.model';
       <label>Edit Alcohol Content:</label>
       <input type="number" [(ngModel)]="childSelectedKeg.alcohol_content" /><br>
       <label>Edit IBU:</label>
-      <input type="number" [(ngModel)]="childSelectedKeg.IBU" /><br>
+      <input type="number" [(ngModel)]="childSelectedKeg.ibu" /><br>
       <label>Edit Amount Remaining:</label>
       <input type="number" [(ngModel)]="childSelectedKeg.quantity" /><br>
       <label>Edit Description:</label>
