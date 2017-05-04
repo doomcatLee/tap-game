@@ -5,23 +5,7 @@ import { Keg } from './keg.model';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <nav class="navbar">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a href="/"><img src="./resources/images/icon.png" id="home-icon" /></a>
-        </div>
-      </div>
-    </nav>
-    <div class="container">
-      <h1>Tap Game</h1>
-      <hr>
-      <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
-      <hr>
-      <edit-keg [childSelectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
-      <new-keg (newKegSender)="addKeg($event)"></new-keg>
-    </div>
-  `
+  templateUrl: './app/app.component.html'
 })
 
 export class AppComponent {
@@ -30,9 +14,12 @@ export class AppComponent {
 
 
   masterKegList: Keg[] = [
-    new Keg('Black Butte Porter','Deshutes', 4.00, 5.2, 30, 124, 'Notes of rich chocolate and coffee, a luscious creaminess and a roasted finish.'),
-    new Keg('Red Chair NWPA','Deshutes', 4.50, 6.2, 60, 124, 'A citrus punch, bold hop aroma and clean finish.'),
-    new Keg('Test','Testing', 4.50, 6.2, 60, 9, 'Test beer for testing.')
+    new Keg('Black Butte Porter','Deshutes', 4.00, 5.2, 30, 124, 'Notes of rich chocolate and coffee, a luscious creaminess and a roasted finish.', 'Porter'),
+    new Keg('Red Chair NWPA','Deshutes', 4.50, 6.2, 60, 124, 'A citrus punch, bold hop aroma and clean finish.', 'IPA'),
+    new Keg('Test','Testing', 4.50, 6.2, 60, 9, 'Test beer for testing.', 'Stout'),
+    new Keg('Test2','Testing2', 5, 4.2, 35, 32, 'Test beer for testing 2.', 'ALE'),
+    new Keg('Test3','Testing3', 5.50, 8.2, 85, 42, 'Test beer for testing 3.', 'ale'),
+    new Keg('Test4','Testing4', 6.50, 10.2, 20, 8, 'Test beer for testing 4.', 'PORTER')
   ];
 
   editKeg(clickedKeg) {

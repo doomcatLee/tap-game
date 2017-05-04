@@ -21,8 +21,31 @@ export class MasterPipe implements PipeTransform {
           output.push(input[i]);
         }
       }
+    } else if (desiredMaster === "ipa") {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].type.toLowerCase() === "ipa"){
+          output.push(input[i]);
+        }
+      }
+    } else if (desiredMaster === "stout") {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].type.toLowerCase() === "stout"){
+          output.push(input[i]);
+        }
+      }
+    } else if (desiredMaster === "ale") {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].type.toLowerCase() === "ale"){
+          output.push(input[i]);
+        }
+      }
+    } else if (desiredMaster === "porter") {
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].type.toLowerCase() === "porter"){
+          output.push(input[i]);
+        }
+      }
     }
     return output;
   }
-
 }
